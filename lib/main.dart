@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:movielog/models/movie.dart';
 
 void main() {
+  final movies = <Movie>[
+    const Movie(id: 1, title: '오디세이'),
+    const Movie(id: 2, title: '스타워즈'),
+    const Movie(id: 3, title: '어벤져스'),
+  ];
+
+  movies.map((m) => m.title).forEach(debugPrint);
+
+  String displayName(String? nickname) {
+    return nickname?.trim().isNotEmpty == true ? nickname! : '이름 없음';
+  }
+
   runApp(const MovieLogApp());
 }
 
